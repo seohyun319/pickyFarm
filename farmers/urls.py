@@ -38,5 +38,10 @@ urlpatterns = [
         views.FarmerMyPageReviewQnAManage.as_view(),
         name="farmer_mypage_review_qna",
     ),
+    path(
+        "mypage/question/<int:pk>/answer/",
+        views.question_answer_submit,
+        name="question_answer_submit",
+    ),
     path("mypage/notice", views.FarmerMyPageNotice.as_view(), name="farmer_mypage_notice"),
 ]

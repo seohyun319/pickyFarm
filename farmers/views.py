@@ -395,6 +395,12 @@ class FarmerMyPageReviewQnAManage(FarmerMyPageBase):
         return context
 
 
+def question_answer_submit(request, pk):
+    question = Question.objects.get(pk=pk)
+    ctx = {"question": question}
+    return render(request, "farmers/mypage/farmer_mypage_answer_submit.html", ctx)
+
+
 class FarmerMyPageNotificationManage(FarmerMyPageBase):
     """농가 알림 페이지"""
 
